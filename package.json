@@ -2,6 +2,21 @@
   "name": "react-antd-mobile-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --no-ignore --fix",
+      "git add --force"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
   "dependencies": {
     "antd-mobile": "^2.2.11",
     "babel-polyfill": "^6.26.0",
@@ -14,6 +29,7 @@
     "mobx-react": "^5.4.3",
     "moment": "^2.24.0",
     "object-assign": "^4.1.1",
+    "prettier": "^1.17.1",
     "promise": "^8.0.2",
     "react": "^16.8.2",
     "react-color": "^2.17.0",
@@ -60,6 +76,7 @@
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.1",
     "html-webpack-plugin": "4.0.0-alpha.2",
+    "husky": "^2.3.0",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.2",
@@ -67,6 +84,7 @@
     "jest-watch-typeahead": "^0.2.1",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
+    "lint-staged": "^8.1.7",
     "mini-css-extract-plugin": "0.5.0",
     "optimize-css-assets-webpack-plugin": "5.0.1",
     "pnp-webpack-plugin": "1.2.1",
